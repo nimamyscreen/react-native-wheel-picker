@@ -6,7 +6,6 @@ import com.aigestudio.wheelpicker.core.AbstractWheelPicker;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.common.MapBuilder;
-import com.facebook.react.uimanager.PixelUtil;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
@@ -76,14 +75,14 @@ public class ReactWheelCurvedPickerManager extends SimpleViewManager<ReactWheelC
     @ReactProp(name="textSize")
     public void setTextSize(ReactWheelCurvedPicker picker, int size) {
         if (picker != null) {
-            picker.setTextSize((int) PixelUtil.toPixelFromDIP(size));
+            picker.setTextSize(size * 2);
         }
     }
 
     @ReactProp(name="itemSpace")
     public void setItemSpace(ReactWheelCurvedPicker picker, int space) {
         if (picker != null) {
-            picker.setItemSpace((int) PixelUtil.toPixelFromDIP(space));
+            picker.setItemSpace(space * 2);
         }
     }
 
